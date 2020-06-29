@@ -5,7 +5,7 @@ before-install:
     - docker build -t lek/docker-react -f Dockerfile.dev .
     # -t ใส่เพื่อสร้าง tag เอาไว้อ้างอิงหลังจาก docker build เสร็จเราจะไม่ต้องใช้ container id อีก..
 
-    script:
+script:
     - docker run -e CI=true lek/docker-react npm run test
 
 deploy:
