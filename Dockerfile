@@ -9,7 +9,8 @@ RUN npm run build
 
 #ถึงตอนนี้จะมี /app/build ท่ีี่เราจะเอาไปใช้ใน nginx
 
-FROM nginx as prod-web
+FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # copy file จาก builder image ที่ folder /app/build ไปที่ nginx image folder /usr/share/nginx/html
 
